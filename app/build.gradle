@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "com.example.equinoxcustomer"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+        baseline file("lint-baseline.xml")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.cardview:cardview:$rootProject.card"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_layout"
+    implementation "com.github.afollestad.material-dialogs:core:$rootProject.materialDilog"
+    implementation "com.squareup.picasso:picasso:$rootProject.picasso"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.gson"
+    implementation "com.facebook.stetho:stetho:$rootProject.stetho"
+    implementation "com.facebook.stetho:stetho-okhttp3:$rootProject.stetho"
+    implementation "pub.devrel:easypermissions:$rootProject.easypermissions"
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
+    annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.roomRxjava2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit"
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.droidninja:filepicker:2.2.0'
+    implementation "com.github.AppIntro:AppIntro:$rootProject.appIntro"
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "android.arch.work:work-runtime:$rootProject.work"
+    implementation 'com.android.support:design:28.0.0'
+    implementation "com.zhihu.android:matisse:$rootProject.mastisse"
+    implementation "android.arch.work:work-runtime:1.0.1"
+    implementation group: 'commons-io', name: 'commons-io', version: '2.4'
+    implementation 'com.github.angads25:filepicker:1.1.1'
+}

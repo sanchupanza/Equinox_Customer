@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.HomeActivity"
+    android:background="#FFFFFF">
+
+
+    <ImageView
+        android:id="@+id/iv_equinox_logo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="6dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/equinoxlogo" />
+
+
+    <ImageView
+        android:id="@+id/iv_graph"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:src="@drawable/graph"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
+        app:layout_constraintEnd_toStartOf="@+id/iv_calender"
+        app:layout_constraintTop_toTopOf="@+id/iv_calender"
+        app:layout_constraintVertical_bias="1.0"></ImageView>
+
+    <ImageView
+        android:id="@+id/iv_calender"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+        app:layout_constraintEnd_toStartOf="@+id/iv_profile"
+        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+        app:srcCompat="@drawable/calendar" />
+
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_power"
+        app:layout_constraintEnd_toStartOf="@+id/iv_power"
+        app:layout_constraintTop_toTopOf="@+id/iv_power"
+        app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/iv_power"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/power" />
+
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_equinox_logo">
+
+
+    </SearchView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:weightSum="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:text="7 All"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:id="@+id/all_7"
+                android:layout_weight="0.5"
+                android:textColor="#FFFFFF"
+                style="@style/Widget.MaterialComponents.ChipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:strokeColor="#FFFFFF"
+
+
+                android:layout_margin="2dp">
+            </com.google.android.material.button.MaterialButton>
+
+            <Button
+                android:text="1 Scheduled"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:id="@+id/schedule_1"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorAccent"
+                android:layout_weight="3.5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="2dp">
+            </Button>
+
+            <Button
+                android:text="3 Collected"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:id="@+id/collected_3"
+                android:layout_weight="3.5"
+                android:layout_width="wrap_content"
+                android:background="@color/colorAccent"
+                android:textColor="#FFFFFF"
+                android:layout_height="50dp"
+                android:layout_margin="2dp">
+            </Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:text="1 Under Processing"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:id="@+id/under_process_1"
+                android:background="@color/colorAccent"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:textColor="#FFFFFF"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+            </Button>
+            <Button
+                android:text="2 Report Ready"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:id="@+id/report_ready_2"
+                android:layout_width="wrap_content"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorAccent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2dp">
+
+            </Button>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
